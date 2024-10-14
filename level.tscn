@@ -1,6 +1,39 @@
-[gd_scene format=3 uid="uid://cvt04bguly5hp"]
+[gd_scene load_steps=4 format=3 uid="uid://cvt04bguly5hp"]
 
-[node name="Level" type="Node"]
+[ext_resource type="Texture2D" uid="uid://xew8m3ucb753" path="res://Scenes/sky.png" id="1_gcrh3"]
+[ext_resource type="Texture2D" uid="uid://bbfjykqhnbbrr" path="res://Scenes/front.png" id="2_u2h1y"]
+[ext_resource type="Texture2D" uid="uid://b0k73c5buptdj" path="res://Scenes/back.png" id="2_uiudh"]
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="Parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+position = Vector2(3, -9)
+scale = Vector2(6.85366, 6.71605)
+texture = ExtResource("1_gcrh3")
+centered = false
+
+[node name="far buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/far buildings"]
+position = Vector2(-1.99994, 314)
+scale = Vector2(1.63358, 4.7963)
+texture = ExtResource("2_uiudh")
+centered = false
+
+[node name="Near Buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near Buildings"]
+texture_filter = 1
+position = Vector2(-5, 563)
+scale = Vector2(1.53027, 3.27161)
+texture = ExtResource("2_u2h1y")
+centered = false
