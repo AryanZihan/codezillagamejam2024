@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbw5wcufw6xq5"]
+
+[ext_resource type="Script" path="res://Scenes/instructions.gd" id="1_xb077"]
+[ext_resource type="Texture2D" uid="uid://bs52rs0h3w4q2" path="res://Assets/menu bg/কন্ট্রোল (1).png" id="2_fxoe0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ieqa5"]
+texture = ExtResource("2_fxoe0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eja11"]
+bg_color = Color(0, 0, 0, 0.662745)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsj71"]
+bg_color = Color(0, 0, 0, 0.968627)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_moooh"]
+bg_color = Color(0, 0, 0, 0.415686)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xb077")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 5.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ieqa5")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 52.0
+offset_top = 54.0
+offset_right = 303.0
+offset_bottom = 156.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.900705, 0.900705, 0.900705, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 58
+theme_override_styles/hover = SubResource("StyleBoxFlat_eja11")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lsj71")
+theme_override_styles/normal = SubResource("StyleBoxFlat_moooh")
+text = "পূর্ববর্তী"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -15,7 +15,6 @@ texture = ExtResource("1_gcrh3")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(6.10352e-05, 0)
-scale = Vector2(1, 1)
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1980, 0)
 
