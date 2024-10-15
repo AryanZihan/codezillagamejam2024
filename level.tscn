@@ -16,18 +16,38 @@ texture = ExtResource("1_gcrh3")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(6.10352e-05, 0)
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1980, 0)
+motion_mirroring = Vector2(10000, 0)
 
 [node name="far buildings" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(1002.5, 700)
-scale = Vector2(1.61017, 5.23457)
+position = Vector2(969.5, 700)
+scale = Vector2(1.5569, 5.23457)
+texture = ExtResource("2_uiudh")
+
+[node name="far buildings" type="Sprite2D" parent="ParallaxLayer/far buildings"]
+position = Vector2(1708.22, -25.9491)
+scale = Vector2(1.75942, 1.29913)
+texture = ExtResource("2_uiudh")
+
+[node name="far buildings" type="Sprite2D" parent="ParallaxLayer/far buildings/far buildings"]
+position = Vector2(2213, 13.2834)
+scale = Vector2(1.95113, 0.814222)
 texture = ExtResource("2_uiudh")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(1.51, 1.51)
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(10000, 0)
 
 [node name="near buildings" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(964, 794)
-scale = Vector2(1.54883, 4.07407)
+position = Vector2(1503.25, 804.5)
+scale = Vector2(2.41929, 3.94444)
+texture = ExtResource("2_u2h1y")
+
+[node name="near buildings" type="Sprite2D" parent="ParallaxLayer2/near buildings"]
+position = Vector2(1273.82, -0.887273)
+scale = Vector2(1.05295, 0.970307)
+texture = ExtResource("2_u2h1y")
+
+[node name="near buildings" type="Sprite2D" parent="ParallaxLayer2/near buildings/near buildings"]
+position = Vector2(1375.13, 1.16459)
+scale = Vector2(1.21791, 0.994982)
 texture = ExtResource("2_u2h1y")

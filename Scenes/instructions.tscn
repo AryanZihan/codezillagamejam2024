@@ -52,6 +52,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ieqa5")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 54.0
 offset_right = 303.0
