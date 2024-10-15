@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wawo577sqq8e"]
+
+[ext_resource type="AudioStream" uid="uid://dh74esday2bki" path="res://Assets/Soundtrack/game-ost.mp3" id="1_d2ce4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_d2ce4")
+volume_db = -8.771
+autoplay = true
+parameters/looping = false

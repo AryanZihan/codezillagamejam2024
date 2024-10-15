@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbw5wcufw6xq5"]
+[gd_scene load_steps=7 format=3 uid="uid://cbw5wcufw6xq5"]
 
 [ext_resource type="Script" path="res://Scenes/instructions.gd" id="1_xb077"]
-[ext_resource type="Texture2D" uid="uid://bs52rs0h3w4q2" path="res://Assets/menu bg/কন্ট্রোল (1).png" id="2_fxoe0"]
-[ext_resource type="AudioStream" uid="uid://dh74esday2bki" path="res://Assets/Soundtrack/game-ost.mp3" id="3_qmix6"]
+[ext_resource type="Texture2D" uid="uid://c4kfbgejp8tr" path="res://Assets/menu bg/কন্ট্রোল (2).png" id="2_acaix"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ieqa5"]
-texture = ExtResource("2_fxoe0")
+texture = ExtResource("2_acaix")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eja11"]
 bg_color = Color(0, 0, 0, 0.662745)
@@ -67,11 +66,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eja11")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lsj71")
 theme_override_styles/normal = SubResource("StyleBoxFlat_moooh")
 text = "পূর্ববর্তী"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_qmix6")
-volume_db = -8.771
-autoplay = true
-parameters/looping = false
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

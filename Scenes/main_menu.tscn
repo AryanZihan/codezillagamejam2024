@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddjdd8wlfjie4"]
+[gd_scene load_steps=7 format=3 uid="uid://ddjdd8wlfjie4"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_5pj4q"]
 [ext_resource type="Texture2D" uid="uid://ddwdprffa8mj4" path="res://Assets/menu bg/Screenshot 2024-10-15 014950.jpg" id="1_edtal"]
-[ext_resource type="AudioStream" uid="uid://dh74esday2bki" path="res://Assets/Soundtrack/game-ost.mp3" id="2_bpr14"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7vfo"]
 texture = ExtResource("1_edtal")
@@ -126,12 +125,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 23
 theme_override_font_sizes/font_size = 53
 text = "Codezilla"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_bpr14")
-volume_db = -8.771
-autoplay = true
-parameters/looping = false
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_instructions_pressed"]
