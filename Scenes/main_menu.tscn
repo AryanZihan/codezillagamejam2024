@@ -118,14 +118,14 @@ text = "বিদ্রোহের প্রহর"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1436.0
+offset_left = 1628.0
 offset_top = 996.0
-offset_right = 2258.0
+offset_right = 2450.0
 offset_bottom = 1160.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 23
 theme_override_font_sizes/font_size = 53
-text = "নির্মাতা- Codezilla"
+text = "Codezilla"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_bpr14")
