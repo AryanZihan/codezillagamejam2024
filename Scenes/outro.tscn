@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://c85tvmlirbu8a"]
+
+[ext_resource type="VideoStream" path="res://Assets/Video/1015.ogv" id="1_4nwe3"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_q8omp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rwct"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 0.721569)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2jfl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4idua"]
+bg_color = Color(0, 0, 0, 0.101961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.99
+anchor_bottom = 0.996
+offset_left = 5.0
+offset_top = 4.0
+offset_right = -97.8002
+offset_bottom = -37.6801
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q8omp")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 1927.0
+offset_bottom = 1096.0
+stream = ExtResource("1_4nwe3")
+volume_db = -12.6
+autoplay = true
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234
+anchor_top = 0.754
+anchor_right = 0.234
+anchor_bottom = 0.754
+offset_left = -370.732
+offset_top = -154.636
+offset_right = 144.268
+offset_bottom = 257.364
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_colors/font_hover_color = Color(0.837469, 0.837469, 0.837469, 1)
+theme_override_colors/font_pressed_color = Color(0.889147, 0.889147, 0.889147, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_3rwct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l2jfl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4idua")
+text = "খেলা শেষ"
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

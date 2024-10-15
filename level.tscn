@@ -38,7 +38,7 @@ motion_scale = Vector2(1.51, 1.51)
 motion_mirroring = Vector2(10000, 0)
 
 [node name="near buildings" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(1503.25, 804.5)
+position = Vector2(1503, 1018)
 scale = Vector2(2.41929, 3.94444)
 texture = ExtResource("2_u2h1y")
 

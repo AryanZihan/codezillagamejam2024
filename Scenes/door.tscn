@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://db08kd8ul0y8g"]
+
+[ext_resource type="Script" path="res://Scenes/door.gd" id="1_3c1db"]
+[ext_resource type="Texture2D" uid="uid://vdj544euot20" path="res://Assets/Tiles/Dhaka Door.png" id="1_4w0pj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej4df"]
+size = Vector2(68, 53)
+
+[node name="door" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_3c1db")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(43.5, -59.5)
+scale = Vector2(6.9375, 8.4375)
+texture = ExtResource("1_4w0pj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -29)
+shape = SubResource("RectangleShape2D_ej4df")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
