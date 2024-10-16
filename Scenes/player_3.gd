@@ -80,7 +80,7 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
-		health = health - 15
+		health = health - 5
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		
@@ -90,7 +90,7 @@ func _on_attack_cooldown_timeout() -> void:
 
 
 func _on_respawn_timeout() -> void:
-	get_tree().change_scene_to_file('res://Scenes/game2.tscn')
+	get_tree().change_scene_to_file('res://Scenes/endscreen.tscn')
 
 
 func _on_deal_attack_timeout() -> void:
@@ -104,7 +104,7 @@ func update_health():
 	
 func _on_regen_health_timeout() -> void:
 	if health < 100:
-		health = health + 8
+		health = health +20
 		if health > 100:
 			health = 100
 	if health <= 0:

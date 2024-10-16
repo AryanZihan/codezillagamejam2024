@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2g6hhilckg21"]
+[gd_scene load_steps=7 format=3 uid="uid://c724e8i7bn1lj"]
 
-[ext_resource type="Script" path="res://player_2.gd" id="1_68763"]
-[ext_resource type="AudioStream" uid="uid://d0mbfntiv43le" path="res://Assets/Sfx/attack.wav" id="5_aij6b"]
-[ext_resource type="AudioStream" uid="uid://b554t15kwkr2x" path="res://Assets/Sfx/jump.wav" id="6_dox2k"]
+[ext_resource type="AudioStream" uid="uid://d0mbfntiv43le" path="res://Assets/Sfx/attack.wav" id="1_dux7i"]
+[ext_resource type="Script" path="res://Scenes/player_3.gd" id="1_dxcvg"]
+[ext_resource type="AudioStream" uid="uid://b554t15kwkr2x" path="res://Assets/Sfx/jump.wav" id="2_53f5q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tl011"]
 animations = [{
@@ -18,11 +18,11 @@ radius = 58.0345
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_devkc"]
 size = Vector2(73, 125)
 
-[node name="player2" type="CharacterBody2D"]
+[node name="player3" type="CharacterBody2D"]
 position = Vector2(-39, -2)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_68763")
+script = ExtResource("1_dxcvg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(65.507, -54.2812)
@@ -58,11 +58,11 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_aij6b")
+stream = ExtResource("1_dux7i")
 volume_db = -2.667
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_dox2k")
+stream = ExtResource("2_53f5q")
 volume_db = -7.728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

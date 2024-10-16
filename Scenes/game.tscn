@@ -857,13 +857,13 @@ text = "শহীদ কখনো মরেনা"
 [node name="CanvasLayer" type="CanvasLayer" parent="texts"]
 
 [node name="Label" type="Label" parent="texts/CanvasLayer"]
-offset_left = 80.0
-offset_top = 16.0
-offset_right = 443.0
-offset_bottom = 175.0
+offset_left = 85.0
+offset_top = 56.0
+offset_right = 563.0
+offset_bottom = 215.0
 theme_override_font_sizes/font_size = 56
 text = "বর্তমান চরিত্র: ছাত্র
-জীবন বাকি: ৩"
+জীবন: ♡♡♡"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
