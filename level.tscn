@@ -24,12 +24,12 @@ scale = Vector2(1.5569, 5.23457)
 texture = ExtResource("2_uiudh")
 
 [node name="far buildings" type="Sprite2D" parent="ParallaxLayer/far buildings"]
-position = Vector2(1708.22, -25.9491)
+position = Vector2(-1679.3, -10.5071)
 scale = Vector2(1.75942, 1.29913)
 texture = ExtResource("2_uiudh")
 
 [node name="far buildings" type="Sprite2D" parent="ParallaxLayer/far buildings/far buildings"]
-position = Vector2(2213, 13.2834)
+position = Vector2(2069.91, 1.59291)
 scale = Vector2(1.95113, 0.814222)
 texture = ExtResource("2_uiudh")
 

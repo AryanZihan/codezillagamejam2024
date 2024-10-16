@@ -118,7 +118,7 @@ animations = [{
 radius = 58.0345
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_devkc"]
-size = Vector2(57, 120)
+size = Vector2(45, 120)
 
 [node name="player2" type="CharacterBody2D"]
 position = Vector2(-39, -2)
@@ -130,8 +130,7 @@ script = ExtResource("1_68763")
 position = Vector2(55.2162, -45.0694)
 scale = Vector2(4.57552, 5.76062)
 sprite_frames = SubResource("SpriteFrames_tl011")
-animation = &"run"
-frame_progress = 0.923933
+animation = &"idle"
 
 [node name="player_hitbox" type="Area2D" parent="."]
 
@@ -170,7 +169,7 @@ stream = ExtResource("6_dox2k")
 volume_db = -7.728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(63.5, -23)
+position = Vector2(57.5, -23)
 shape = SubResource("RectangleShape2D_devkc")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
