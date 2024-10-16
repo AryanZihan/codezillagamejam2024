@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 40
 var player_chase = false
 var player = null
-var health = 100
+var health = 500
 var player_inattack_range = false
 
 func _physics_process(delta: float) -> void:
@@ -45,6 +45,6 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 		
 func deal_with_damage():
 	if player_inattack_range and Global.player_current_attack:
-		health = health - 30
+		health = health - 5
 		if health <= 0:
 			self.queue_free()

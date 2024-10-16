@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2g6hhilckg21"]
+
+[ext_resource type="Script" path="res://player_2.gd" id="1_68763"]
+[ext_resource type="Texture2D" uid="uid://ddimgtqpbf1mv" path="res://Assets/Sprites/farmer/spritesheet (9).png" id="2_jkclk"]
+[ext_resource type="AudioStream" uid="uid://d0mbfntiv43le" path="res://Assets/Sfx/attack.wav" id="5_aij6b"]
+[ext_resource type="AudioStream" uid="uid://b554t15kwkr2x" path="res://Assets/Sfx/jump.wav" id="6_dox2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojegj"]
+atlas = ExtResource("2_jkclk")
+region = Rect2(0, 34, 30, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tl011"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojegj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_trc5k"]
+radius = 58.0345
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_devkc"]
+size = Vector2(73, 125)
+
+[node name="player2" type="CharacterBody2D"]
+position = Vector2(-39, -2)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_68763")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(65.507, -54.2812)
+scale = Vector2(4.7662, 6.1011)
+sprite_frames = SubResource("SpriteFrames_tl011")
+animation = &"idle"
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(56, -39)
+shape = SubResource("CircleShape2D_trc5k")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="respawn" type="Timer" parent="."]
+
+[node name="deal_attack" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="regen_health" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.596078, 0.0705882, 1)
+offset_left = -1.0
+offset_top = -155.0
+offset_right = 121.0
+offset_bottom = -134.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aij6b")
+volume_db = -2.667
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dox2k")
+volume_db = -7.728
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(62.5, -18.5)
+shape = SubResource("RectangleShape2D_devkc")
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="respawn" to="." method="_on_respawn_timeout"]
+[connection signal="timeout" from="deal_attack" to="." method="_on_deal_attack_timeout"]
+[connection signal="timeout" from="regen_health" to="." method="_on_regen_health_timeout"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://btww4iob6avb5"]
+
+[ext_resource type="Script" path="res://endscreen.gd" id="1_6pjec"]
+[ext_resource type="Texture2D" uid="uid://ddwdprffa8mj4" path="res://Assets/menu bg/Screenshot 2024-10-15 014950.jpg" id="2_0usoj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7vfo"]
+texture = ExtResource("2_0usoj")
+modulate_color = Color(0.603923, 0.603923, 0.603923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rwct"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 0.721569)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2jfl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4idua"]
+bg_color = Color(0, 0, 0, 0.101961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[node name="endscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pjec")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f7vfo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 446.0
+offset_right = 1594.0
+offset_bottom = 610.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 23
+theme_override_font_sizes/font_size = 119
+text = "আপনি হেরে গিয়েছেন"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1628.0
+offset_top = 996.0
+offset_right = 2450.0
+offset_bottom = 1160.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 23
+theme_override_font_sizes/font_size = 53
+text = "Codezilla"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+offset_left = 592.0
+offset_top = 620.0
+offset_right = 1347.0
+offset_bottom = 763.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.837469, 0.837469, 0.837469, 1)
+theme_override_colors/font_pressed_color = Color(0.889147, 0.889147, 0.889147, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_3rwct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l2jfl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4idua")
+text = "আবার চেষ্টা করুন"
+
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_exit_pressed"]

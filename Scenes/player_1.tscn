@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://df7mwyiq1vofg"]
+[gd_scene load_steps=27 format=3 uid="uid://df7mwyiq1vofg"]
 
 [ext_resource type="Texture2D" uid="uid://c4u0ducc056lg" path="res://Assets/Sprites/student/jump/spritesheet (1).png" id="1_tc3u4"]
 [ext_resource type="Script" path="res://Scenes/player_1.gd" id="1_woxh2"]
 [ext_resource type="Texture2D" uid="uid://dpvd8steqrs01" path="res://Assets/Sprites/student/maLE pUNCH/spritesheet (2).png" id="2_8hshh"]
 [ext_resource type="Texture2D" uid="uid://bfnd1maqgc4vv" path="res://Assets/Sprites/student/run/spritesheet.png" id="3_tujhb"]
+[ext_resource type="AudioStream" uid="uid://d0mbfntiv43le" path="res://Assets/Sfx/attack.wav" id="5_h5n43"]
+[ext_resource type="AudioStream" uid="uid://b554t15kwkr2x" path="res://Assets/Sfx/jump.wav" id="6_ymvkj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbc3r"]
 atlas = ExtResource("1_tc3u4")
@@ -163,7 +165,9 @@ script = ExtResource("1_woxh2")
 position = Vector2(53, -62)
 scale = Vector2(4.2353, 4.23684)
 sprite_frames = SubResource("SpriteFrames_yjw8a")
-animation = &"idle"
+animation = &"punch"
+frame = 3
+frame_progress = 0.480828
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 5
@@ -181,7 +185,33 @@ wait_time = 0.5
 
 [node name="respawn" type="Timer" parent="."]
 
+[node name="deal_attack" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="regen_health" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.596078, 0.0705882, 1)
+offset_left = -1.0
+offset_top = -155.0
+offset_right = 121.0
+offset_bottom = -134.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_h5n43")
+volume_db = -2.667
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ymvkj")
+volume_db = -7.728
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="respawn" to="." method="_on_respawn_timeout"]
+[connection signal="timeout" from="deal_attack" to="." method="_on_deal_attack_timeout"]
+[connection signal="timeout" from="regen_health" to="." method="_on_regen_health_timeout"]
