@@ -1,9 +1,10 @@
 extends Area2D
-@onready var timer: Timer = $Timer
+@onready var endscreener: Timer = $endscreener
+
 
 func _on_body_entered(body: Node2D) -> void:
-	timer.start()
+	endscreener.start()
 
 
-func _on_timer_timeout() -> void:
+func _on_endscreener_timeout() -> void:
 	get_tree().change_scene_to_file('res://Scenes/endscreen.tscn')

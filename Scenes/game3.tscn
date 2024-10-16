@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bgoqdfc0fpujd"]
 
 [ext_resource type="PackedScene" uid="uid://dkwujnbgrqnm7" path="res://level.tscn" id="1_1vvir"]
-[ext_resource type="PackedScene" uid="uid://b2g6hhilckg21" path="res://Scenes/player_2.tscn" id="2_q1mom"]
+[ext_resource type="PackedScene" uid="uid://c724e8i7bn1lj" path="res://Scenes/player_3.tscn" id="2_f18af"]
 [ext_resource type="Texture2D" uid="uid://dp1njd3q7tkje" path="res://Assets/Tiles/Dhaka TileSet 64x64.png" id="3_kkmyi"]
 [ext_resource type="PackedScene" uid="uid://ctb7c7wg32htq" path="res://Scenes/platform.tscn" id="4_4nt53"]
 [ext_resource type="PackedScene" uid="uid://db08kd8ul0y8g" path="res://Scenes/door.tscn" id="5_osx5m"]
@@ -817,7 +817,7 @@ _data = {
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wbrb2"]
-distance = -1209.0
+distance = -1193.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(6, 0)
@@ -862,13 +862,14 @@ offset_top = 55.0
 offset_right = 602.0
 offset_bottom = 214.0
 theme_override_font_sizes/font_size = 56
-text = "বর্তমান চরিত্র: কৃষক
-জীবন : ♡♡"
+text = "বর্তমান চরিত্র: চিকিৎসক
+জীবন : ♡"
 
-[node name="player2" parent="." instance=ExtResource("2_q1mom")]
-position = Vector2(371, 693)
+[node name="player3" parent="." instance=ExtResource("2_f18af")]
+top_level = true
+position = Vector2(332, 691)
 
-[node name="Camera2D" type="Camera2D" parent="player2"]
+[node name="Camera2D" type="Camera2D" parent="player3"]
 zoom = Vector2(2, 2)
 limit_bottom = 1067
 
@@ -960,4 +961,5 @@ position = Vector2(13961, 784)
 [node name="killzone_3" parent="." instance=ExtResource("7_s44wp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_3"]
+position = Vector2(1, -11)
 shape = SubResource("WorldBoundaryShape2D_wbrb2")

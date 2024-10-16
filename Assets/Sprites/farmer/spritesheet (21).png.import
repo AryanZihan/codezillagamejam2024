@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddimgtqpbf1mv"
-path="res://.godot/imported/spritesheet (9).png-5ac01e274307cc03fd91b2965d00b99d.ctex"
+uid="uid://b41g837k2t8f5"
+path="res://.godot/imported/spritesheet (21).png-88217da59e832585bf68f91bfd9da7a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/farmer/spritesheet (9).png"
-dest_files=["res://.godot/imported/spritesheet (9).png-5ac01e274307cc03fd91b2965d00b99d.ctex"]
+source_file="res://Assets/Sprites/farmer/spritesheet (21).png"
+dest_files=["res://.godot/imported/spritesheet (21).png-88217da59e832585bf68f91bfd9da7a6.ctex"]
 
 [params]
 

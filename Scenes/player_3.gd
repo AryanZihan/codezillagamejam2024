@@ -104,7 +104,7 @@ func update_health():
 	
 func _on_regen_health_timeout() -> void:
 	if health < 100:
-		health = health +20
+		health = health + 10
 		if health > 100:
 			health = 100
 	if health <= 0:

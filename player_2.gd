@@ -89,7 +89,7 @@ func _on_attack_cooldown_timeout() -> void:
 
 
 func _on_respawn_timeout() -> void:
-	get_tree().change_scene_to_file('res://Scenes/game.tscn')
+	get_tree().change_scene_to_file('res://Scenes/game3.tscn')
 
 
 func _on_deal_attack_timeout() -> void:

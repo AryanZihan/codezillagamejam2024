@@ -91,5 +91,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_l2jfl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4idua")
 text = "আবার চেষ্টা করুন"
 
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

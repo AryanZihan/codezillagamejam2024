@@ -866,6 +866,7 @@ text = "বর্তমান চরিত্র: কৃষক
 জীবন : ♡♡"
 
 [node name="player2" parent="." instance=ExtResource("2_tcibq")]
+top_level = true
 position = Vector2(371, 693)
 
 [node name="Camera2D" type="Camera2D" parent="player2"]
