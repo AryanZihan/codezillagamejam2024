@@ -39,21 +39,21 @@ region = Rect2(34, 0, 34, 34)
 atlas = ExtResource("3_upc2t")
 region = Rect2(0, 34, 34, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_87wk1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oen6w"]
 atlas = ExtResource("4_7ali6")
-region = Rect2(0, 0, 27, 27)
+region = Rect2(0, 0, 29, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7bmv5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy0k6"]
 atlas = ExtResource("4_7ali6")
-region = Rect2(27, 0, 27, 27)
+region = Rect2(29, 0, 29, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgipo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp08t"]
 atlas = ExtResource("4_7ali6")
-region = Rect2(0, 27, 27, 27)
+region = Rect2(0, 29, 29, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7nkoo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxqee"]
 atlas = ExtResource("4_7ali6")
-region = Rect2(27, 27, 27, 27)
+region = Rect2(29, 29, 29, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tl011"]
 animations = [{
@@ -98,16 +98,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_87wk1")
+"texture": SubResource("AtlasTexture_oen6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7bmv5")
+"texture": SubResource("AtlasTexture_iy0k6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgipo")
+"texture": SubResource("AtlasTexture_cp08t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7nkoo")
+"texture": SubResource("AtlasTexture_nxqee")
 }],
 "loop": true,
 "name": &"run",
@@ -118,7 +118,7 @@ animations = [{
 radius = 58.0345
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_devkc"]
-size = Vector2(73, 125)
+size = Vector2(57, 120)
 
 [node name="player2" type="CharacterBody2D"]
 position = Vector2(-39, -2)
@@ -131,6 +131,7 @@ position = Vector2(55.2162, -45.0694)
 scale = Vector2(4.57552, 5.76062)
 sprite_frames = SubResource("SpriteFrames_tl011")
 animation = &"run"
+frame_progress = 0.923933
 
 [node name="player_hitbox" type="Area2D" parent="."]
 
@@ -169,7 +170,7 @@ stream = ExtResource("6_dox2k")
 volume_db = -7.728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(63, -30)
+position = Vector2(63.5, -23)
 shape = SubResource("RectangleShape2D_devkc")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
