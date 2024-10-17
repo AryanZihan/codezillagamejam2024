@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://n6ny1lq10qyb"]
+[gd_scene load_steps=10 format=3 uid="uid://n6ny1lq10qyb"]
 
 [ext_resource type="Texture2D" uid="uid://bb3jqx4f1ma8k" path="res://Assets/Sprites/police run/spritesheet-2.png" id="2_kn6t3"]
-[ext_resource type="PackedScene" uid="uid://c2jeabg7ydobj" path="res://gun.tscn" id="3_rhopv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7j64"]
 atlas = ExtResource("2_kn6t3")
@@ -49,6 +48,8 @@ size = Vector2(253.844, 56.6562)
 size = Vector2(30, 79)
 
 [node name="police" type="CharacterBody2D"]
+position = Vector2(403, 369)
+scale = Vector2(1.63524, 1.68)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -66,18 +67,15 @@ position = Vector2(171, 49)
 shape = SubResource("CircleShape2D_f5l8e")
 
 [node name="enemy hitbox" type="Area2D" parent="."]
+scale = Vector2(1, 0.967213)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy hitbox"]
 visible = false
 position = Vector2(165, 47)
 shape = SubResource("RectangleShape2D_0rc70")
 
-[node name="gun" parent="." instance=ExtResource("3_rhopv")]
-position = Vector2(234, 3)
-scale = Vector2(0.604614, 0.652051)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(165, 58.5)
+position = Vector2(165.764, 51.2295)
 shape = SubResource("RectangleShape2D_5rgj5")
 
 [connection signal="body_entered" from="detection area" to="." method="_on_detection_area_body_entered"]
