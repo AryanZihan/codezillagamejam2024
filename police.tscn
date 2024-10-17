@@ -60,7 +60,7 @@ scale = Vector2(2.57328, 2.60937)
 sprite_frames = SubResource("SpriteFrames_gru8i")
 animation = &"new_animation"
 frame = 3
-frame_progress = 0.843984
+frame_progress = 0.699878
 
 [node name="detection area" type="Area2D" parent="."]
 visibility_layer = 2
