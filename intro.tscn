@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://brbobpgtydplc"]
+
+[ext_resource type="Texture2D" uid="uid://du16ulw5g8b0c" path="res://intro png/ezgif-frame-001.png" id="1_rc7r1"]
+
+[sub_resource type="Animation" id="Animation_r5rom"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fvqln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nq6ay"]
+_data = {
+"RESET": SubResource("Animation_fvqln"),
+"fade": SubResource("Animation_r5rom")
+}
+
+[node name="intro" type="Node2D"]
+position = Vector2(-9, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(949, 532)
+rotation = -0.0133122
+scale = Vector2(0.982209, 0.947269)
+texture = ExtResource("1_rc7r1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -124.0
+offset_top = -57.0
+offset_right = -84.0
+offset_bottom = -17.0
+scale = Vector2(64.553, 29.6045)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nq6ay")
+}
