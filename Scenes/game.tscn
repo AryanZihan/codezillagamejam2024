@@ -961,14 +961,14 @@ position = Vector2(11442, 982)
 position = Vector2(13961, 784)
 
 [node name="police" parent="." instance=ExtResource("8_8r1jh")]
-position = Vector2(8349, 550)
+position = Vector2(8310, 544)
 
 [node name="gun2" parent="police" instance=ExtResource("9_60uku")]
-position = Vector2(894.669, -519.047)
+position = Vector2(179.179, 32.1428)
 scale = Vector2(0.741755, 0.436755)
 
 [node name="gun" parent="police" instance=ExtResource("9_60uku")]
-position = Vector2(1149.68, -560.714)
+position = Vector2(228.101, 16.6666)
 rotation = -0.0153392
 scale = Vector2(0.72455, 0.501737)
 
