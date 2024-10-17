@@ -8,18 +8,16 @@ var player_inattack_range = false
 
 func _physics_process(delta: float) -> void:
 	deal_with_damage()
+	$AnimatedSprite2D.play("idle")
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if player_chase:
 		position += (player.position - position)/SPEED
-		$AnimatedSprite2D.play("attack")
 		if(player.position.x - position.x) < 0:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-	else:
-		$AnimatedSprite2D.play("idle")
 	move_and_slide()
 
 
