@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://djjug3u17yckx"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_0i5ft"]
+[ext_resource type="Texture2D" uid="uid://d2k2vlnr7xv23" path="res://Assets/Sprites/police run/bullet.png" id="2_5yjye"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0xsd"]
+
+[node name="bullet" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_0i5ft")
+
+[node name="png" type="Sprite2D" parent="."]
+position = Vector2(445.75, 210.5)
+scale = Vector2(3.57813, 4.20833)
+texture = ExtResource("2_5yjye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(431, 182)
+shape = SubResource("CircleShape2D_t0xsd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
