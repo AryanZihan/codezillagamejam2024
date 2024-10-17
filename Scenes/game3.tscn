@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgoqdfc0fpujd"]
+[gd_scene load_steps=20 format=3 uid="uid://bgoqdfc0fpujd"]
 
 [ext_resource type="PackedScene" uid="uid://dkwujnbgrqnm7" path="res://level.tscn" id="1_1vvir"]
 [ext_resource type="PackedScene" uid="uid://c724e8i7bn1lj" path="res://Scenes/player_3.tscn" id="2_f18af"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://db08kd8ul0y8g" path="res://Scenes/door.tscn" id="5_osx5m"]
 [ext_resource type="PackedScene" uid="uid://d3tufcgxrsc1q" path="res://Scenes/enemy.tscn" id="6_3h0sy"]
 [ext_resource type="PackedScene" uid="uid://da5xp2vmxpkxb" path="res://Scenes/killzone_3.tscn" id="7_s44wp"]
+[ext_resource type="PackedScene" uid="uid://n6ny1lq10qyb" path="res://police.tscn" id="8_r78xp"]
 
 [sub_resource type="GDScript" id="GDScript_w6n7p"]
 script/source = "extends Node2D
@@ -130,7 +131,7 @@ texture_region_size = Vector2i(64, 64)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.1023, -22.981, 25.1023, -22.2739, 32, 32, -32, 32)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
@@ -834,7 +835,7 @@ offset_right = 2900.0
 offset_bottom = 704.0
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 0.815686)
 theme_override_font_sizes/font_size = 47
-text = "রক্ত গরম, মাথা ঠান্ডা"
+text = "কারার ঐ লৌহ কপাট..."
 
 [node name="Label2" type="Label" parent="texts"]
 offset_left = 5260.0
@@ -870,8 +871,8 @@ top_level = true
 position = Vector2(332, 691)
 
 [node name="Camera2D" type="Camera2D" parent="player3"]
-zoom = Vector2(2, 2)
-limit_bottom = 1067
+zoom = Vector2(1.58, 1.58)
+limit_bottom = 1080
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -963,3 +964,6 @@ position = Vector2(13961, 784)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_3"]
 position = Vector2(1, -11)
 shape = SubResource("WorldBoundaryShape2D_wbrb2")
+
+[node name="police" parent="." instance=ExtResource("8_r78xp")]
+position = Vector2(13995, 361)

@@ -10,8 +10,12 @@ const JUMP_VELOCITY = -550.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack = $attack
 @onready var jump = $Jump
+@onready var joybangla: AudioStreamPlayer = $Joybangla
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("chant"):
+		joybangla.play()
+	
 	# Add the gravity.
 	if health >= 0:
 		player_alive = false

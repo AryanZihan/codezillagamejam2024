@@ -29,6 +29,7 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.427451)
 shadow_size = 8
 
 [node name="Main Menu" type="Control"]
@@ -49,6 +50,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -54.0
+offset_right = 54.0
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_f7vfo")
@@ -78,7 +83,7 @@ theme_override_font_sizes/font_size = 90
 theme_override_styles/hover = SubResource("StyleBoxFlat_3rwct")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2jfl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4idua")
-text = "খেলা হবে!!"
+text = "খেলা হবে"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -107,24 +112,15 @@ text = "খেলা শেষ"
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 548.0
-offset_top = 280.0
-offset_right = 1354.0
-offset_bottom = 439.0
+offset_top = 216.0
+offset_right = 1370.0
+offset_bottom = 380.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 23
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/shadow_outline_size = 51
 theme_override_font_sizes/font_size = 119
 text = "বিদ্রোহের প্রহর"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1628.0
-offset_top = 996.0
-offset_right = 2450.0
-offset_bottom = 1160.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 23
-theme_override_font_sizes/font_size = 53
-text = "Codezilla"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_instructions_pressed"]

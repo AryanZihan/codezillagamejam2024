@@ -23,12 +23,13 @@ script = ExtResource("2_kr8do")
 
 [node name="weapon pivot" type="Marker2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-255.154, 654.547)
 rotation = 1.26126
 
 [node name="pistol" type="Sprite2D" parent="weapon pivot"]
-position = Vector2(509.829, 409.926)
+position = Vector2(-13.7306, 13.9931)
 rotation = -1.27802
-scale = Vector2(1.8125, 1.92105)
+scale = Vector2(2.39962, 2.35843)
 texture = ExtResource("1_wxm0n")
 
 [node name="shooting point" type="Marker2D" parent="weapon pivot/pistol"]

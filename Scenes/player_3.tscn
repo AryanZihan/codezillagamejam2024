@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c724e8i7bn1lj"]
+[gd_scene load_steps=27 format=3 uid="uid://c724e8i7bn1lj"]
 
 [ext_resource type="AudioStream" uid="uid://d0mbfntiv43le" path="res://Assets/Sfx/attack.wav" id="1_dux7i"]
 [ext_resource type="Script" path="res://Scenes/player_3.gd" id="1_dxcvg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cr851bjw05wc6" path="res://Assets/Sprites/doctor/spritesheet (11).png" id="2_337qh"]
 [ext_resource type="Texture2D" uid="uid://bh0i8ofrb1yb4" path="res://Assets/Sprites/doctor/spritesheet (13).png" id="3_qawnc"]
 [ext_resource type="Texture2D" uid="uid://bi7rd4nbk14ve" path="res://Assets/Sprites/doctor/spritesheet (12).png" id="4_lpvge"]
+[ext_resource type="AudioStream" uid="uid://b1lro4y21ra15" path="res://Assets/Sfx/joybangla.mp3" id="7_ywh50"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2kr"]
 atlas = ExtResource("2_337qh")
@@ -190,7 +191,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_dux7i")
-volume_db = -2.667
+volume_db = 1.333
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_53f5q")
@@ -199,6 +200,10 @@ volume_db = -7.728
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(65, -21)
 shape = SubResource("RectangleShape2D_devkc")
+
+[node name="Joybangla" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ywh50")
+volume_db = -3.759
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

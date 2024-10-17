@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cox07bmc0ddae"]
+[gd_scene load_steps=20 format=3 uid="uid://cox07bmc0ddae"]
 
 [ext_resource type="PackedScene" uid="uid://dkwujnbgrqnm7" path="res://level.tscn" id="1_xlnif"]
 [ext_resource type="Texture2D" uid="uid://dp1njd3q7tkje" path="res://Assets/Tiles/Dhaka TileSet 64x64.png" id="2_x37ka"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cj46rn11olpqp" path="res://Scenes/killzone_1.tscn" id="6_30ty4"]
 [ext_resource type="PackedScene" uid="uid://d3tufcgxrsc1q" path="res://Scenes/enemy.tscn" id="7_f7uqt"]
 [ext_resource type="PackedScene" uid="uid://n6ny1lq10qyb" path="res://police.tscn" id="8_8r1jh"]
-[ext_resource type="PackedScene" uid="uid://djjug3u17yckx" path="res://bullet.tscn" id="9_02k0a"]
-[ext_resource type="PackedScene" uid="uid://c2jeabg7ydobj" path="res://gun.tscn" id="9_60uku"]
 
 [sub_resource type="GDScript" id="GDScript_w6n7p"]
 script/source = "extends Node2D
@@ -66,6 +64,7 @@ texture_region_size = Vector2i(64, 64)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 3:1/0 = 0
@@ -133,7 +132,7 @@ texture_region_size = Vector2i(64, 64)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.1023, -22.981, 25.1023, -22.2739, 32, 32, -32, 32)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
@@ -838,7 +837,7 @@ offset_right = 2900.0
 offset_bottom = 704.0
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 0.815686)
 theme_override_font_sizes/font_size = 47
-text = "রক্ত গরম, মাথা ঠান্ডা"
+text = "কারার ঐ লৌহ কপাট..."
 
 [node name="Label2" type="Label" parent="texts"]
 offset_left = 5260.0
@@ -880,8 +879,8 @@ top_level = true
 position = Vector2(614, 616)
 
 [node name="Camera2D" type="Camera2D" parent="player1"]
-zoom = Vector2(2, 2)
-limit_bottom = 1067
+zoom = Vector2(1.58, 1.58)
+limit_bottom = 1080
 
 [node name="platforms" type="Node" parent="."]
 
@@ -937,10 +936,10 @@ position = Vector2(4355, 918)
 position = Vector2(6321, 853)
 
 [node name="enemy5" parent="enemies" instance=ExtResource("7_f7uqt")]
-position = Vector2(6421, 848)
+position = Vector2(6469, 854)
 
 [node name="enemy6" parent="enemies" instance=ExtResource("7_f7uqt")]
-position = Vector2(6548, 856)
+position = Vector2(6600, 846)
 
 [node name="enemy7" parent="enemies" instance=ExtResource("7_f7uqt")]
 position = Vector2(8362, 987)
@@ -960,17 +959,14 @@ position = Vector2(11442, 982)
 [node name="enemy15" parent="enemies" instance=ExtResource("7_f7uqt")]
 position = Vector2(13961, 784)
 
+[node name="enemy8" parent="enemies" instance=ExtResource("7_f7uqt")]
+position = Vector2(8580, 722)
+
+[node name="enemy9" parent="enemies" instance=ExtResource("7_f7uqt")]
+position = Vector2(8444, 721)
+
+[node name="enemy14" parent="enemies" instance=ExtResource("7_f7uqt")]
+position = Vector2(8708, 719)
+
 [node name="police" parent="." instance=ExtResource("8_8r1jh")]
-position = Vector2(8310, 544)
-
-[node name="gun2" parent="police" instance=ExtResource("9_60uku")]
-position = Vector2(179.179, 32.1428)
-scale = Vector2(0.741755, 0.436755)
-
-[node name="gun" parent="police" instance=ExtResource("9_60uku")]
-position = Vector2(228.101, 16.6666)
-rotation = -0.0153392
-scale = Vector2(0.72455, 0.501737)
-
-[node name="bullet" parent="police" instance=ExtResource("9_02k0a")]
-position = Vector2(8912, 647)
+position = Vector2(13995, 361)

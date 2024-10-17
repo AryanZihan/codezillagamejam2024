@@ -1,18 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://n6ny1lq10qyb"]
+[gd_scene load_steps=8 format=3 uid="uid://n6ny1lq10qyb"]
 
+[ext_resource type="Script" path="res://police.gd" id="1_v58oi"]
 [ext_resource type="Texture2D" uid="uid://bb3jqx4f1ma8k" path="res://Assets/Sprites/police run/spritesheet-2.png" id="2_kn6t3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7j64"]
-atlas = ExtResource("2_kn6t3")
-region = Rect2(0, 0, 29, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1hnn"]
-atlas = ExtResource("2_kn6t3")
-region = Rect2(29, 0, 29, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktbj3"]
-atlas = ExtResource("2_kn6t3")
-region = Rect2(58, 0, 29, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bn26j"]
 atlas = ExtResource("2_kn6t3")
@@ -21,15 +10,6 @@ region = Rect2(87, 0, 29, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_gru8i"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k7j64")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1hnn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktbj3")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bn26j")
 }],
@@ -45,18 +25,20 @@ radius = 55.0091
 size = Vector2(253.844, 56.6562)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rgj5"]
-size = Vector2(30, 79)
+size = Vector2(33.3068, 84.7771)
 
 [node name="police" type="CharacterBody2D"]
 position = Vector2(403, 369)
 scale = Vector2(1.63524, 1.68)
+script = ExtResource("1_v58oi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(161.688, 56.75)
-scale = Vector2(2.57328, 2.60937)
+position = Vector2(165.231, 50.4404)
+scale = Vector2(2.8176, 3.00372)
 sprite_frames = SubResource("SpriteFrames_gru8i")
 animation = &"idle"
+flip_h = true
 
 [node name="detection area" type="Area2D" parent="."]
 visibility_layer = 2
@@ -75,7 +57,8 @@ position = Vector2(165, 47)
 shape = SubResource("RectangleShape2D_0rc70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(165.764, 51.2295)
+position = Vector2(167.417, 48.3409)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5rgj5")
 
 [connection signal="body_entered" from="detection area" to="." method="_on_detection_area_body_entered"]

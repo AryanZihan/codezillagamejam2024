@@ -89,7 +89,7 @@ theme_override_font_sizes/font_size = 90
 theme_override_styles/hover = SubResource("StyleBoxFlat_3rwct")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2jfl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4idua")
-text = "আবার চেষ্টা করুন"
+text = "আবার খেলা হবে"
 
-[connection signal="pressed" from="Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_exit_pressed"]

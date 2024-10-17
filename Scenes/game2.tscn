@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bw0ol5r4nfprf"]
+[gd_scene load_steps=20 format=3 uid="uid://bw0ol5r4nfprf"]
 
 [ext_resource type="PackedScene" uid="uid://dkwujnbgrqnm7" path="res://level.tscn" id="1_ge5t7"]
 [ext_resource type="Texture2D" uid="uid://dp1njd3q7tkje" path="res://Assets/Tiles/Dhaka TileSet 64x64.png" id="2_80lne"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctb7c7wg32htq" path="res://Scenes/platform.tscn" id="4_7jhhx"]
 [ext_resource type="PackedScene" uid="uid://db08kd8ul0y8g" path="res://Scenes/door.tscn" id="5_4wilr"]
 [ext_resource type="PackedScene" uid="uid://d3tufcgxrsc1q" path="res://Scenes/enemy.tscn" id="7_04tuk"]
+[ext_resource type="PackedScene" uid="uid://n6ny1lq10qyb" path="res://police.tscn" id="8_2cf4l"]
 [ext_resource type="PackedScene" uid="uid://bkvqhuj3yimf5" path="res://Scenes/killzone_2.tscn" id="8_khsm7"]
 
 [sub_resource type="GDScript" id="GDScript_w6n7p"]
@@ -835,7 +836,7 @@ offset_right = 2900.0
 offset_bottom = 704.0
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 0.815686)
 theme_override_font_sizes/font_size = 47
-text = "রক্ত গরম, মাথা ঠান্ডা"
+text = "কারার ঐ লৌহ কপাট..."
 
 [node name="Label2" type="Label" parent="texts"]
 offset_left = 5260.0
@@ -871,8 +872,8 @@ top_level = true
 position = Vector2(371, 693)
 
 [node name="Camera2D" type="Camera2D" parent="player2"]
-zoom = Vector2(2, 2)
-limit_bottom = 1067
+zoom = Vector2(1.58, 1.58)
+limit_bottom = 1080
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -964,3 +965,6 @@ position = Vector2(13961, 784)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone_2"]
 position = Vector2(185, -117)
 shape = SubResource("WorldBoundaryShape2D_6c4kb")
+
+[node name="police" parent="." instance=ExtResource("8_2cf4l")]
+position = Vector2(13995, 361)

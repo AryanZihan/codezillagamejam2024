@@ -11,8 +11,11 @@ const JUMP_VELOCITY = -550.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack = $attack
 @onready var jump = $Jump
+@onready var joybangla: AudioStreamPlayer = $Joybangla
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("chant"):
+		joybangla.play()
 	# Add the gravity.
 	if health >= 0:
 		player_alive = false
@@ -80,7 +83,7 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
-		health = health - 15
+		health = health - 12
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		
@@ -109,3 +112,4 @@ func _on_regen_health_timeout() -> void:
 			health = 100
 	if health <= 0:
 		health = 0
+	
