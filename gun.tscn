@@ -23,6 +23,7 @@ shape = SubResource("CircleShape2D_avku7")
 script = ExtResource("2_kr8do")
 
 [node name="weapon pivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
 rotation = 1.26126
 
 [node name="pistol" type="Sprite2D" parent="weapon pivot"]
@@ -41,6 +42,7 @@ scale = Vector2(1.33504, 1)
 position = Vector2(-66, -53)
 
 [node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.578
 autostart = true
 
